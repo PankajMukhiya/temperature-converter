@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter App</title>
+</head>
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+
+<body>
+    <h1> Temperature Converter </h1>
+    <div id="container">
+        <div class="box">
+            <label>Celcius</label>
+            <!-- TODO -->
+            <!-- <select class="lbl" >
+                <option >Celsius</option>
+                <option value="">Fahrenheit</option>
+                <option value="">Kelvin</option>
+            <select/> -->
+            <br>
+            <input type="number" class="inp" id="cel" value="0">
+        </div>
+        <div class="box">
+            <label>Fahrenheit</label>
+            <!-- TODO -->
+            <!-- <select class="lbl" >
+                <option >Celsius</option>
+                <option value="">Fahrenheit</option>
+                <option value="">Kelvin</option>
+            <select/> -->
+            <br>
+            <input type="number" class="inp" id="fah" value="32">
+        </div>
+
+
+
+
+
+
+
+
+        <script>
+            let cel = document.getElementById('cel');
+            let fah = document.getElementById('fah');
+            // console.log(cel)
+            // console.log(fah)
+
+
+
+            cel.addEventListener('input', function () {
+                let c = this.value;
+                let f = (c * 9 / 5) + 32;
+                if (!Number.isInteger(c)) {
+                    f = f.toFixed(2)
+                }
+                fah.value = f;
+            })
+
+
+            fah.addEventListener('input', function () {
+                let f = this.value;
+                let c = (f - 32) * 5 / 9;
+                if (!Number.isInteger(c)) {
+                    c = c.toFixed(2)
+                }
+                cel.value = c;
+            })
+
+
+        </script>
+</body>
+
+</html>
